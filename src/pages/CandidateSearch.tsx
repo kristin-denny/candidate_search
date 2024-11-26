@@ -68,8 +68,9 @@ const CandidateSearch = () => {
 
 //save profile to local storage
   const saveProfile = () => {
-    updateSavedProfiles([...savedProfiles, profile]);
-    localStorage.setItem("savedCandidates", JSON.stringify(savedProfiles));
+    const tempProfiles = [...savedProfiles, profile];
+    updateSavedProfiles(tempProfiles);
+    localStorage.setItem("savedCandidates", JSON.stringify(tempProfiles));
     updateIndex();
   };
 
